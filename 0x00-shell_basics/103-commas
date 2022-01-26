@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l -a -m [0-9]* [A-Z]* *tmp/
+ls -mpa
