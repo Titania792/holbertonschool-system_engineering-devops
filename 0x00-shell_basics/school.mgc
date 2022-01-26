@@ -1,2 +1,2 @@
 #!/bin/bash
-file magic string *SCHOOL
+touch school.mgc file magic string SCHOOL
