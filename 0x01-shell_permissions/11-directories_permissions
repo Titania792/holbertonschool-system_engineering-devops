@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod --recursive 111 h$
+chmod -R 111 */
