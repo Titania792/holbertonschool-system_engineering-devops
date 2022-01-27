@@ -1,2 +1,2 @@
-#!/bin/bash
-chmod 751 /tmp/my_dir
+#!/bin/bas
+mkdir -m 751 my_dir
