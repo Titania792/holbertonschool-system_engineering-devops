@@ -1,2 +1,2 @@
 #i!/bin/bash
-find */ -ls -a -empty | wc -l
+find */ -ls -empty -print . | wc -l
