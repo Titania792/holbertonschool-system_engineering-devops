@@ -1,2 +1,1 @@
-#!/bin/bash
-1234
+Starting Shell Basics
