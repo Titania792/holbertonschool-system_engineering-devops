@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 while :
   do
-    echo "To infinity and beyond"
-    sleep 2
-    if (trap 15)
+		if (trap 15)
       then
       echo "I am invincible!!!"
     fi
-    done
+    echo "To infinity and beyond"
+    sleep 2
+  done
