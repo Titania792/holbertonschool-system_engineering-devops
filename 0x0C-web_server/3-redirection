@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#commands to automatically configure a Ubuntu machine
+sudo apt -y update
+sudo apt -y install nginx
+str="listen 80 default_server;\nlisten [::]:80 default_server;\nserver_name titania792.tech www.titania792.tech;\nredirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sed -i "s/listen 80 default_server;\nlisten [::]:80 default_server;/$str/" /etc/nginx/sites-available/default
+sudo service nginx start
