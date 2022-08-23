@@ -8,6 +8,7 @@ SUBDOM=("www" "lb-01" "web-01" "web-02")
 for sdom in "${SUBDOM[@]}"
 do
     dig "$sdom"."$1" | grep -A1 'ANSWER SECTION:' | tail -n1 > aux
-    awk -v sdom="$sdom" '{print "The subdomain " sdom " is a " $4 " record and points to " $5}' aux
+    echo -n "The subdomain "
+    awk -v sdom="$sdom" '{print sdom " is a " $4 " record and points to " $5}' aux
     rm -r aux
 done
