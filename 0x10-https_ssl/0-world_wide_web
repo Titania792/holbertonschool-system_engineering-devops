@@ -4,7 +4,7 @@ if [ -z "$2" ]
   then
     SUBDOM=("www" "lb-01" "web-01" "web-02")
   else
-    SUBDOM=$2
+    SUBDOM=("$2")
 fi
 for sdom in "${SUBDOM[@]}"
 do
