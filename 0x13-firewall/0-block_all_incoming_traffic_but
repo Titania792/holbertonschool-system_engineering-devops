@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#install the ufw firewall and setup a few rules on web-01
+
+sudo apt install ufw
+sudo ufw default deny incoming #enables ufw configuration
+sudo ufw allow 22 #add ssh connection
+sudo ufw allow 443 #add connection to 443 https port
+sudo ufw allow 80 #add connection to 80 http port
+sudo ufw enable #restarts firewall and enables it
+sudo ufw status numbered #checks the status of ufw services
