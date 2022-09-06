@@ -11,7 +11,7 @@ if __name__ == '__main__':
     api_url2 = "https://jsonplaceholder.typicode.com/todos?userId={}"\
         .format(u_id)
     response = requests.get(api_url).json()
-    EMPLOYEE_NAME = response.get('name').split(' ')
+    EMPLOYEE_NAME = response.get('username')
     response = requests.get(api_url2).json()
     f_name = u_id + '.csv'
     with open(f_name, 'w', encoding='utf-8') as f:
@@ -19,4 +19,4 @@ if __name__ == '__main__':
             TASK_COMPLETED_STATUS = info.get("completed")
             TASK_TITLE = info.get("title")
             f.write('"{}","{}","{}","{}"\n'.format(
-                u_id, EMPLOYEE_NAME[0], TASK_COMPLETED_STATUS, TASK_TITLE))
+                u_id, EMPLOYEE_NAME, TASK_COMPLETED_STATUS, TASK_TITLE))
