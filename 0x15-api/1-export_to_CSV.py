@@ -13,8 +13,10 @@ if __name__ == '__main__':
     response = requests.get(api_url).json()
     EMPLOYEE_NAME = response.get('name').split(' ')
     response = requests.get(api_url2).json()
-    for info in response:
-        TASK_COMPLETED_STATUS = info.get("completed")
-        TASK_TITLE = info.get("title")
-        print('"{}","{}","{}","{}"'.format(
-            u_id, EMPLOYEE_NAME[0], TASK_COMPLETED_STATUS, TASK_TITLE))
+    f_name = u_id + '.csv'
+    with open(f_name, 'w', encoding='utf-8') as f:
+        for info in response:
+            TASK_COMPLETED_STATUS = info.get("completed")
+            TASK_TITLE = info.get("title")
+            f.write('"{}","{}","{}","{}"\n'.format(
+                u_id, EMPLOYEE_NAME[0], TASK_COMPLETED_STATUS, TASK_TITLE))
