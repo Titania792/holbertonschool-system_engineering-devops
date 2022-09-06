@@ -18,8 +18,8 @@ if __name__ == "__main__":
     u_list = []
     with open(f_name, 'w', encoding='utf-8') as f:
         for info in response:
-            dic = {
-                "task": info['title'], "completed": info['completed'], "username": EMPLOYEE_NAME}
+            dic = {"task": info['title'], "completed": info['completed'],
+                   "username": EMPLOYEE_NAME}
             u_list.append(dic)
             user = {u_id: u_list}
             f.write(json.dumps(user))
