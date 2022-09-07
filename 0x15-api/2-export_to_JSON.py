@@ -15,11 +15,10 @@ if __name__ == "__main__":
     EMPLOYEE_NAME = response.get('username')
     response = requests.get(api_url2).json()
     f_name = u_id + '.json'
-    u_list = []
+    u_list = {u_id: []}
+    for info in response:
+        dic = {"task": info.get('title'), "completed": info.get('completed'),
+               "username": EMPLOYEE_NAME}
+        u_list.get(u_id).append(dic)
     with open(f_name, 'w', encoding='utf-8') as f:
-        for info in response:
-            dic = {"task": info['title'], "completed": info['completed'],
-                   "username": EMPLOYEE_NAME}
-            u_list.append(dic)
-            user = {u_id: u_list}
-            f.write(json.dumps(user))
+        json.dump(u_list, f)
