@@ -18,7 +18,8 @@ if __name__ == "__main__":
         tasks = [task for task in resp]
         dict[u_id] = []
         for info in tasks:
-            t_dic = {"task": info.get('title'), "completed": info.get('completed'),
+            t_dic = {"task": info.get('title'),
+                     "completed": info.get('completed'),
                      "username": name}
             dict.get(u_id).append(t_dic)
     with open("todo_all_employees.json", 'w', encoding='utf-8') as f:
